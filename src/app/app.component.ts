@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GitHubService } from 'src/app/services/github.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SoftwareDownloads';
+  title = 'VP Software Downloads';
+
+  constructor(private downloadService: GitHubService) {
+  }
+
+  ngOnInit() {
+  }
 }

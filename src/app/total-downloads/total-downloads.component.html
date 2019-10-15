@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="form-group row">
+        <label for="monthSelector" class="col-sm-2 control-label release-date">From </label>
+        <select id="monthSelector" class="form-control form-control-sm col-sm-6" [ngModel]="downloadMonth.value" (ngModelChange)="onChange($event)">
+            <option *ngFor="let month of monthList" [value]="month.value">{{month.display}}</option>
+        </select>
+        <span class="col-sm-2 release-date">&nbsp;to&nbsp;{{previousMonth}}</span>
+    </div>
+    <div *ngFor="let year of years" class="years">
+        <h2>{{year}}</h2>
+        <div *ngFor="let item of software | downloadFilter: year; let i = index" class="">
+            <div class="downloads-{{i}}">
+                    {{item.software}}
+            </div>
+            {{item.count}}
+        </div>
+    </div>
+</div>

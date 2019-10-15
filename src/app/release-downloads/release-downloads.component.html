@@ -1,0 +1,34 @@
+<div>
+    <div data-toggle="buttons" style="text-align: center; padding-top: 20px;">
+          <label class="btn btn-secondary" (click)="loadSoftware('virtualphotonics', 'vts')">
+            <input type="radio" name="options" value="vts" [(ngModel)]="software"> VTS
+          </label>
+          <label class="btn btn-secondary" (click)="loadSoftware('virtualphotonics', 'Vts.Gui.Wpf')">
+            <input type="radio" name="options" value="Vts.Gui.Wpf" [(ngModel)]="software"> WPF Application
+          </label>
+          <label class="btn btn-secondary" (click)="loadSoftware('virtualphotonics', 'MieSimulatorGUI')">
+            <input type="radio" name="options" value="MieSimulatorGUI" [(ngModel)]="software"> Mie Simulator
+          </label>
+    </div>
+    <ul *ngFor="let version of downloadData; let i = index">
+    <li>
+        <span style="font-weight: bold">{{version.name}}</span>&nbsp;({{version.published_at | date: 'MM/dd/yyyy'}})
+    </li>
+    <table class="table-striped" width="100%">
+      <thead>
+        <tr>
+          <th width="25%"></th>
+          <th>Download File</th>
+          <th># of Downloads</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="" *ngFor="let asset of version.assets; let i = index">
+          <td></td>
+          <td>{{asset.name}}</td>
+          <td>{{asset.download_count}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ul>
+</div>
