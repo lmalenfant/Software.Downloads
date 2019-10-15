@@ -9,10 +9,9 @@
     <div *ngFor="let year of years" class="years">
         <h2>{{year}}</h2>
         <div *ngFor="let item of software | downloadFilter: year; let i = index" class="">
-            <div class="downloads-{{i}}">
-                    {{item.software}}
+            <div class="software downloads-{{item.software}}">
+                    {{item.softwareDescription}} - {{item.count}}
             </div>
-            {{item.count}}
         </div>
     </div>
 </div>

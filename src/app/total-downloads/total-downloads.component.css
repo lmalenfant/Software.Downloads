@@ -12,26 +12,33 @@ label.release-date {
 
 .years {
     float: left;
-    border: 1px solid darkgray;
     padding: 50px;
+}
+
+.years h2 {
+    text-align: center;
 }
 
 .downloads {
     float: left;
-    transform: rotateX('90');
 }
 
-.downloads-0 {
+.software {
+    text-align: center;
+    padding: 5px 20px;
+}
+
+.downloads-mccl {
     color: white;
     background-color: brown;
 } 
-.downloads-1 {
+.downloads-wpf {
     color: white;
     background-color: darkslateblue;
 } 
-.downloads-2 {
+.downloads-matlab {
     background-color: olive;
 } 
-.downloads-3 {
+.downloads-mie {
     background-color: orange;
 }

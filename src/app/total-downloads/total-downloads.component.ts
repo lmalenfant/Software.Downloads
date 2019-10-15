@@ -55,34 +55,34 @@ export class TotalDownloads {
                     if (this.software.length > 0) {
                         let counted = false;
                         this.software.forEach(element => {
-                            if (element.year === releaseYear && element.software === "MCCL") {
+                            if (element.year === releaseYear && element.software === "mccl") {
                                 element.count += downloadCount;
                                 counted = true;
                             }
                         });
                         if (!counted) {
-                            let thing: DownloadCount = new DownloadCount("MCCL", releaseYear, downloadCount);
+                            let thing: DownloadCount = new DownloadCount("mccl", "MCCL", releaseYear, downloadCount);
                             this.software.push(thing);
                         }
                     } else {
-                        let thing: DownloadCount = new DownloadCount("MCCL", releaseYear, downloadCount);
+                        let thing: DownloadCount = new DownloadCount("mccl", "MCCL", releaseYear, downloadCount);
                         this.software.push(thing);
                     }
                 } else {
                     if (this.software.length > 0) {
                         let counted = false;
                         this.software.forEach(element => {
-                            if (element.year === releaseYear && element.software === "MATLAB") {
+                            if (element.year === releaseYear && element.software === "matlab") {
                                 element.count += downloadCount;
                                 counted = true;
                             }
                         });
                         if (!counted) {
-                            let thing: DownloadCount = new DownloadCount("MATLAB", releaseYear, downloadCount);
+                            let thing: DownloadCount = new DownloadCount("matlab", "MATLAB", releaseYear, downloadCount);
                             this.software.push(thing);
                         }
                     } else {
-                        let thing: DownloadCount = new DownloadCount("MATLAB", releaseYear, downloadCount);
+                        let thing: DownloadCount = new DownloadCount("matlab", "MATLAB", releaseYear, downloadCount);
                         this.software.push(thing);
                     }
                 }
@@ -103,17 +103,17 @@ export class TotalDownloads {
                 if (this.software.length > 0) {
                     let counted = false;
                     this.software.forEach(element => {
-                        if (element.year === releaseYear && element.software === "WPF") {
+                        if (element.year === releaseYear && element.software === "wpf") {
                             element.count += downloadCount;
                             counted = true;
                         }
                     });
                     if (!counted) {
-                        let thing: DownloadCount = new DownloadCount("WPF", releaseYear, downloadCount);
+                        let thing: DownloadCount = new DownloadCount("wpf", "WPF", releaseYear, downloadCount);
                         this.software.push(thing);
                     }
                 } else {
-                    let thing: DownloadCount = new DownloadCount("WPF", releaseYear, downloadCount);
+                    let thing: DownloadCount = new DownloadCount("wpf", "WPF", releaseYear, downloadCount);
                     this.software.push(thing);
                 }
             });
@@ -134,17 +134,17 @@ export class TotalDownloads {
                 if (this.software.length > 0) {
                     let counted = false;
                     this.software.forEach(element => {
-                        if (element.year === releaseYear && element.software === "Mie Simulator") {
+                        if (element.year === releaseYear && element.software === "mie") {
                             element.count += downloadCount;
                             counted = true;
                         }
                     });
                     if (!counted) {
-                        let thing: DownloadCount = new DownloadCount("Mie Simulator", releaseYear, downloadCount);
+                        let thing: DownloadCount = new DownloadCount("mie", "Mie Simulator", releaseYear, downloadCount);
                         this.software.push(thing);
                     }
                 } else {
-                    let thing: DownloadCount = new DownloadCount("Mie Simulator", releaseYear, downloadCount);
+                    let thing: DownloadCount = new DownloadCount("mie", "Mie Simulator", releaseYear, downloadCount);
                     this.software.push(thing);
                 }
             });
