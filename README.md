@@ -1,6 +1,6 @@
 # SoftwareDownloads
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+This application uses the GitHub API to get the number of downloads for all [VP software](https://github.com/VirtualPhotonics). This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Development server
 
