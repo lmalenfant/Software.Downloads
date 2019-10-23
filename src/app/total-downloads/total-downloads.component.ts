@@ -167,7 +167,7 @@ export class TotalDownloads {
     let releaseYear: number = releaseDate.getFullYear();  
     let releaseMonth: number = releaseDate.getMonth(); 
     // 0 month is January so pass the month value accordingly
-    if (releaseMonth > month) {
+    if (releaseMonth >= month) {
         return releaseYear;
     } else {
         return releaseYear - 1;
