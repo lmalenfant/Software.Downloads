@@ -6,6 +6,9 @@ This application uses the GitHub API to get the number of downloads for all [VP 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Bring up the website
+Run `ng serve --open` to run the website.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
@@ -13,9 +16,6 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Run
-Run `ng build --open` to build and run the website.
 
 ## Running unit tests
 
