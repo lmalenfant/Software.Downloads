@@ -1,4 +1,4 @@
 export class Month {
-    value: number;
-    display: string;
+    public value: number = 0;
+    public display: string = "January";
 }

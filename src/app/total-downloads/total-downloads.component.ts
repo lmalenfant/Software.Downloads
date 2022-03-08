@@ -4,6 +4,7 @@ import { DownloadCount } from './total-downloads.model';
 import { MonthList } from './month-list';
 import { Month } from './month.model';
 import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { Version } from 'src/app/version.model';
 
 @Component({
   selector: 'total-downloads',
@@ -11,9 +12,9 @@ import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
   styleUrls: ['./total-downloads.component.css']
 })
 export class TotalDownloads {
-    vts: Array<object>;
-    wpf: Array<object>;
-    mie: Array<object>;
+    vts: Array<Version> = [];
+    wpf: Array<Version> = [];
+    mie: Array<Version> = [];
     software: Array<DownloadCount> = [];
     downloadMonth: Month = { value: 0, display: 'January' };
     @Input('monthList') monthList = MonthList;
@@ -24,7 +25,7 @@ export class TotalDownloads {
   constructor(private downloadService: GitHubService) {
   }
 
-  onChange(value) {
+  onChange(value: number) {
     this.downloadMonth.value = value;
     let monthValue = value - 1;
     if (monthValue < 0) {

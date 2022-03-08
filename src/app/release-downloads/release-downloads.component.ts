@@ -1,3 +1,4 @@
+import { Version } from 'src/app/version.model';
 import { Component } from '@angular/core';
 import { GitHubService } from 'src/app/services/github.service';
 
@@ -7,7 +8,7 @@ import { GitHubService } from 'src/app/services/github.service';
   styleUrls: ['./release-downloads.component.css']
 })
 export class ReleaseDownloads {
-  downloadData: Array<object>;
+  downloadData: Array<Version> = [];
   software: string = 'vts';
 
   constructor(private downloadService: GitHubService) {

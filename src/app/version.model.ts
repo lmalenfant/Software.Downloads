@@ -1,9 +1,9 @@
 import { Asset } from './asset.model';
 
 export class Version {
-    tag_name: string;
-    name: string;
-    published_at: string;
-    assets: Array<Asset>;
+    public tag_name: string = "";
+    public name: string = "";
+    public published_at: string = "01/01/2020";
+    public assets: Array<Asset> = [];
   }
   

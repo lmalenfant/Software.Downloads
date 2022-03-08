@@ -1,5 +1,5 @@
 export class Asset {
-    name: string;
-    download_count: number;
+    public name: string = "";
+    public download_count: number = 0;
   }
   
