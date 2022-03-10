@@ -1,5 +1,8 @@
 <div>
     <div data-toggle="buttons" style="text-align: center; padding-top: 20px;">
+          <label class="btn btn-secondary" (click)="loadSoftware('virtualphotonics', 'Vts.MonteCarlo')">
+            <input type="radio" name="options" value="Vts.MonteCarlo" [(ngModel)]="software"> MCCL
+          </label>
           <label class="btn btn-secondary" (click)="loadSoftware('virtualphotonics', 'vts')">
             <input type="radio" name="options" value="vts" [(ngModel)]="software"> VTS
           </label>

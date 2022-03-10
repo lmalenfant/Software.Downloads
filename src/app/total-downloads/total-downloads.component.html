@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row release-date">
-        <div class="col-md-2"><label for="monthSelector" class="col-md-2">From</label></div>
+        <div class="col-md-2 from"><label for="monthSelector" class="col-md-2">From</label></div>
         <div class="col-md-6">
             <select id="monthSelector" class="form-select" [ngModel]="downloadMonth.value" (ngModelChange)="onChange($event)">
                 <option *ngFor="let month of monthList" [value]="month.value">{{month.display}}</option>
             </select>
         </div>
-        <div class="col-md-2"><label>&nbsp;to&nbsp;{{previousMonth}}</label></div>
+        <div class="col-md-2 to"><label>&nbsp;to&nbsp;{{previousMonth}}</label></div>
     </div>
     <div *ngFor="let year of years" class="years">
         <h2>{{year}}</h2>

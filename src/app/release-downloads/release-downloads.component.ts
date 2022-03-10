@@ -9,7 +9,7 @@ import { GitHubService } from 'src/app/services/github.service';
 })
 export class ReleaseDownloads {
   downloadData: Array<Version> = [];
-  software: string = 'vts';
+  software: string = 'Vts.MonteCarlo';
 
   constructor(private downloadService: GitHubService) {
 

@@ -3,7 +3,6 @@ import { GitHubService } from 'src/app/services/github.service';
 import { DownloadCount } from './total-downloads.model';
 import { MonthList } from './month-list';
 import { Month } from './month.model';
-import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 import { Version } from 'src/app/version.model';
 
 @Component({
@@ -15,6 +14,7 @@ export class TotalDownloads {
     vts: Array<Version> = [];
     wpf: Array<Version> = [];
     mie: Array<Version> = [];
+    mccl: Array<Version> = [];
     software: Array<DownloadCount> = [];
     downloadMonth: Month = { value: 0, display: 'January' };
     @Input('monthList') monthList = MonthList;
@@ -56,17 +56,17 @@ export class TotalDownloads {
                     if (this.software.length > 0) {
                         let counted = false;
                         this.software.forEach(element => {
-                            if (element.year === releaseYear && element.software === "mccl") {
+                            if (element.year === releaseYear && element.software === "mccl-vts") {
                                 element.count += downloadCount;
                                 counted = true;
                             }
                         });
                         if (!counted) {
-                            let thing: DownloadCount = new DownloadCount("mccl", "MCCL", releaseYear, downloadCount);
+                            let thing: DownloadCount = new DownloadCount("mccl-vts", "MCCL - VTS", releaseYear, downloadCount);
                             this.software.push(thing);
                         }
                     } else {
-                        let thing: DownloadCount = new DownloadCount("mccl", "MCCL", releaseYear, downloadCount);
+                        let thing: DownloadCount = new DownloadCount("mccl-vts", "MCCL - VTS", releaseYear, downloadCount);
                         this.software.push(thing);
                     }
                 } else {
@@ -123,7 +123,38 @@ export class TotalDownloads {
         this.updateYears();
         console.log(this.years);
     });
-      this.downloadService.getDownloadData('virtualphotonics', 'MieSimulatorGUI').subscribe((data: any) => {
+    this.downloadService.getDownloadData('virtualphotonics', 'Vts.MonteCarlo').subscribe((data: any) => {
+        // populate the object
+        this.mccl = data;
+        this.mccl.forEach(release => {
+            let releaseDate: Date = new Date(release["published_at"]);
+            let releaseYear: number = this.getCustomYear(releaseDate, this.downloadMonth.value);
+            let assets = release["assets"];
+            assets.forEach(asset => {
+                let downloadCount: number = asset["download_count"];
+                if (this.software.length > 0) {
+                    let counted = false;
+                    this.software.forEach(element => {
+                        if (element.year === releaseYear && element.software === "mccl") {
+                            element.count += downloadCount;
+                            counted = true;
+                        }
+                    });
+                    if (!counted) {
+                        let thing: DownloadCount = new DownloadCount("mccl", "MCCL", releaseYear, downloadCount);
+                        this.software.push(thing);
+                    }
+                } else {
+                    let thing: DownloadCount = new DownloadCount("mccl", "MCCL", releaseYear, downloadCount);
+                    this.software.push(thing);
+                }
+            });
+        });
+        console.log(this.software);
+        this.updateYears();
+        console.log(this.years);
+    });
+    this.downloadService.getDownloadData('virtualphotonics', 'MieSimulatorGUI').subscribe((data: any) => {
         // populate the object
         this.mie = data;
         this.mie.forEach(release => {
