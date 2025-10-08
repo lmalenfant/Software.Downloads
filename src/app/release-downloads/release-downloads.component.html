@@ -12,6 +12,9 @@
           <label class="btn btn-secondary" (click)="loadSoftware('virtualphotonics', 'MieSimulatorGUI')">
             <input type="radio" name="options" value="MieSimulatorGUI" [(ngModel)]="software"> Mie Simulator
           </label>
+          <label class="btn btn-secondary" (click)="loadSoftware('virtualphotonics', 'Vts.Scripting.Python')">
+            <input type="radio" name="options" value="Python" [(ngModel)]="software"> Python
+          </label>
     </div>
     <ul *ngFor="let version of downloadData; let i = index">
     <li>

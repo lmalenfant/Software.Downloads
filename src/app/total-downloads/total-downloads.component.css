@@ -18,7 +18,8 @@
 
 .years {
     float: left;
-    padding: 50px;
+    padding: 20px 40px;
+    min-height: 260px;
 }
 
 .years h2 {
@@ -47,8 +48,12 @@
     background-color: darkslateblue;
 } 
 .downloads-matlab {
+    color: white;
     background-color: olive;
 } 
 .downloads-mie {
     background-color: orange;
+}
+.downloads-python {
+    background-color: gold;
 }
